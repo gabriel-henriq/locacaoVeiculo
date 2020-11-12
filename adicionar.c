@@ -1,4 +1,5 @@
 void menuSalvar(void);
+
 void adicionarCarro(void) {
 	limpaTela();
 	imprimeCreditos();
@@ -50,9 +51,7 @@ void adicionarCarro(void) {
 	fflush(stdin);	
 	*/
 	
-	nCarro->proximo = head;
-	
-	head = nCarro;
+
 	
 	menuSalvar();	
 }
