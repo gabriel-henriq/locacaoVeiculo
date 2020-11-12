@@ -1,54 +1,37 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <windows.h>
 /*==========================    Locação de Carros         =====================*
 ============================  Author: Gabriel Henrique    =====================*
 ============================ Professor: Rosemari Pavan    =====================*
 ============================ Camões Faculdades Integradas =====================*
 */
-typedef struct {
-	char brand[20];
-	char model[20];
-	char color[15];
-	int year;
-	int price;
-	int stock;
-	double sellMonth;
-} CAR;
-void readFile() {
-	
-}
+//============================================
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <string.h>
+#include <windows.h>
+#include <conio.h>
+//============================================
+#include "globais.c"
+#include "utilitarias.c"
+#include "estruturaCarro.c"
+#include "adicionar.c"
+#include "alternaLista.c"
+#include "ordenaLista.c"
+#include "imprimeLista.c"
+#include "menuSalvar.c"
+#include "menu.c"
+#include "salvarEstrutura.c"
+#include "carregarDatabase.c"
+
+
 int main(void) {
 	
 	
+	carregarDatabase();
 	
-	CAR car[2];
-	
-	FILE *database;
+	sistemaPrincipal();
+    
 
-	int getCharFile;
-	int startLinePosition = 0, lineSize = 0;
-	char lineContent[lineSize];
-	database = fopen("database.txt", "r+");
-	do {
-		getCharFile = fgetc(database);
-		if(feof(database)) {
-			break;
-		}
-		lineSize++;
-		if(getCharFile == '|') {
-			fseek(database, startLinePosition, SEEK_SET);
-			fgets(lineContent, lineSize, database);
-			startLinePosition += lineSize;
-			fseek(database, startLinePosition, SEEK_SET);
-			lineSize = 0;
-		}
-	}while(1);
-	
-	
-	
-	fclose(database);
-	    	            
-	return 0;
-}
+    return EXIT_SUCCESS; 
+} 
+
+
