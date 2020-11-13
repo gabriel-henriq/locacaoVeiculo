@@ -43,3 +43,8 @@ void imprimeCreditos(void) {
 void apertarESC() {
 	while(getch() != 27);
 }
+void estruturaBasica(void) {
+	limpaTela();
+	imprimeCreditos();
+	bordasMenu();
+}
