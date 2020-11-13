@@ -1,5 +1,5 @@
 struct tipoCarro { 
-	
+
 	int carroID; 
     char marca[26]; 
     char modelo[26];
@@ -8,5 +8,4 @@ struct tipoCarro {
     float vendasMensal;
     int qtEstoque;
     
-
-}nCarro;
+};
