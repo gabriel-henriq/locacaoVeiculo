@@ -12,11 +12,9 @@
 //============================================
 #include "globais.c"
 #include "utilitarias.c"
-#include "estruturaCarro.c"
+#include "estruturarCarro.c"
 #include "adicionar.c"
-#include "alternaLista.c"
-#include "ordenaLista.c"
-#include "imprimeLista.c"
+#include "imprimirLista.c"
 #include "menuSalvar.c"
 #include "menu.c"
 #include "salvarEstrutura.c"
