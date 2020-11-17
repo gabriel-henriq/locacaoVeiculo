@@ -17,6 +17,7 @@
 #include "adicionar.c"
 #include "imprimirListaDeCarros.c"
 #include "menu.c"
+#include "menuPesquisar.c"
 
 
 
