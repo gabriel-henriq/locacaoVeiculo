@@ -1,4 +1,4 @@
-void carregarDatabase(void) {
+void carregarDados(void) {
 	FILE *entradaArquivo; 
     int i = 0;
     entradaArquivo = fopen("database.txt", "r");
