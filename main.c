@@ -18,7 +18,7 @@
 #include "imprimirListaDeCarros.c"
 #include "menu.c"
 #include "menuPesquisar.c"
-
+#include "pesquisaID.c"
 
 
 int main(void) {
