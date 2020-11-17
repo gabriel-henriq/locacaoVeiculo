@@ -87,7 +87,6 @@ void sistemaPrincipal(void) {
 				bordasMenu();
 				gotoxy(40,3);
 				printf("Pesquisar");
-				alternaLista(&head);
 				imprimirLista();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
