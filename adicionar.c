@@ -6,7 +6,6 @@ void adicionarCarro(void) {
 	gotoxy(40,3);
 	printf("Adicionar");
 	
-	char tmpName[26];
 	int tmpNum;
 	
 	while(tmpNum != 27) {
@@ -15,11 +14,11 @@ void adicionarCarro(void) {
 			do{
 				gotoxy(18,7);
 				printf("Voce atingiu o nivel maximo de armazenamento de dados.");
-				gotoxy(20,9);
+				gotoxy(21,9);
 				printf("Exclua algum dado para adicionar um novo.");
-				gotoxy(22,20);
+				gotoxy(22,15);
 				printf("Apenas sair e manter dados em memoria. [ESC]");
-				gotoxy(20,22);
+				gotoxy(22,17);
 				printf("Salvar e Sair [S]");
 				tmpNum = getch();
 				if(tmpNum == 27) {
@@ -38,40 +37,36 @@ void adicionarCarro(void) {
 			} while(1);
 		}
 		
-		nCarro[NUM_ID].carroID = NUM_ID;
-		
+		nCarro[NUM_ID].carroID = NUM_ID+1;
 		
 		gotoxy(30,10);
 		printf("Digite o nome da marca: ");
-		fgets(tmpName, 25, stdin);
-		strcpy(nCarro[NUM_ID].marca,tmpName);
+		fgets(nCarro[NUM_ID].marca, 14, stdin);
 		fflush(stdin);
 		
 		
 		gotoxy(30,10);
-		printf("                                       ");
+		printf("                                         ");
 		gotoxy(30,10);
 		printf("Digite o nome do modelo: ");
-		fgets(tmpName, 25,stdin);
-		strcpy(nCarro[NUM_ID].modelo,tmpName);
+		fgets(nCarro[NUM_ID].modelo, 12,stdin);
 		fflush(stdin);	
 	
-		
+	
 		gotoxy(30,10);
-		printf("                                        ");
+		printf("                                          ");
 		gotoxy(30,10);
 		printf("Digite o nome da cor: ");
-		fgets(tmpName,20,stdin);
-		strcpy(nCarro[NUM_ID].cor,tmpName);
+		fgets(nCarro[NUM_ID].cor, 11,stdin);
 		fflush(stdin);
 		
 		gotoxy(30,10);
-		printf("                                       ");
+		printf("                                          ");
 		gotoxy(30,10);
-		printf("Digite o nome do ano: ");
-		scanf("%d", &tmpNum);	
-		nCarro[NUM_ID].ano = tmpNum;
+		printf("Digite o ano: ");
+		scanf("%d", &nCarro[NUM_ID].ano);	
 		fflush(stdin);	
+		
 		NUM_ID++;
 		
 		gotoxy(30,10);
