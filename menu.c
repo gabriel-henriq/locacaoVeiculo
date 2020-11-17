@@ -1,3 +1,4 @@
+void menuPesquisar(void);
 void imprimirLista(void);
 void sistemaPrincipal(void) {
 	int opcao = 0;
@@ -56,7 +57,6 @@ void sistemaPrincipal(void) {
 		} while(opcao == 0);
 		switch(opcao) {
 			case 7:
-				//lerDatabase(tipoCarro, ler);
 				adicionarCarro();
 				break;
 			case 10:
@@ -85,9 +85,9 @@ void sistemaPrincipal(void) {
 				limpaTela();
 				imprimeCreditos();
 				bordasMenu();
-				gotoxy(40,3);
+				gotoxy(40,2);
 				printf("Pesquisar");
-				imprimirListaDeCarros();
+				menuPesquisar();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
