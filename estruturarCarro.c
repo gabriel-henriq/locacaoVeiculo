@@ -8,4 +8,4 @@ struct tipoCarro {
     //float vendasMensal;
     //int qtEstoque;
     
-}nCarro[31];
+}nCarro[16];
