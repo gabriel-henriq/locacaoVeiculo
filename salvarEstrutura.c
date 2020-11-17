@@ -1,4 +1,0 @@
-void salvarEstrutura(void) {
-	
-
-}

@@ -16,8 +16,7 @@
 #include "adicionar.c"
 #include "imprimirLista.c"
 #include "menu.c"
-#include "salvarEstrutura.c"
-#include "carregarDatabase.c"
+#include "carregarDados.c"
 
 
 int main(void) {
