@@ -10,13 +10,13 @@ void menuPesquisar(void) {
 		bordasMenu();
 		gotoxy(28,3);
 		printf("M e n u     P e s q u i s a r");
-		gotoxy(30,7);
+		gotoxy(32,7);
 		printf("Gerar Relatorio");
-		gotoxy(30,10);
+		gotoxy(32,10);
 		printf("Pesquisar por ID");
-		gotoxy(30,13);
+		gotoxy(32,13);
 		printf("Imprimir todos os items");
-		gotoxy(30,16);
+		gotoxy(32,16);
 		printf("Relatorio com filtro");
 		gotoxy(30,19);
 		printf("Voltar");
