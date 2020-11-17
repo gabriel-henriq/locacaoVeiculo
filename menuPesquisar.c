@@ -1,3 +1,4 @@
+void pesquisaID(void);
 void menuPesquisar(void) {
 	int opcao = 0;
 	do {
@@ -55,9 +56,7 @@ void menuPesquisar(void) {
 		} while(opcao == 0);
 		switch(opcao) {
 			case 7:
-				limpaTela();
-				imprimeCreditos();
-				bordasMenu();
+				estruturaBasica();
 				gotoxy(35,2);
 				printf("Gerar Relatorio");
 				
@@ -66,20 +65,16 @@ void menuPesquisar(void) {
 				apertarESC();				
 				break;
 			case 10:
-				limpaTela();
-				imprimeCreditos();
-				bordasMenu();
+				estruturaBasica();
 				gotoxy(35,2);
 				printf("Pesquisar por ID");
-				
+				pesquisaID();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
 				break;
 			case 13:
-				limpaTela();
-				imprimeCreditos();
-				bordasMenu();
+				estruturaBasica();
 				gotoxy(32,2);
 				printf("Imprimir todos os items");
 				imprimirListaDeCarros();
@@ -88,9 +83,7 @@ void menuPesquisar(void) {
 				apertarESC();
 				break;
 			case 16:
-				limpaTela();
-				imprimeCreditos();
-				bordasMenu();
+				estruturaBasica();
 				gotoxy(35,2);
 				printf("Relatorio com filtro");
 				
