@@ -1,11 +1,7 @@
 struct tipoCarro { 
-
 	int carroID; 
-    char marca[26]; 
-    char modelo[26];
-    char cor[26];
-    int ano;
-    //float vendasMensal;
-    //int qtEstoque;
-    
+    char marca[15]; 
+    char modelo[12];
+    char cor[11];
+    int ano;    
 }nCarro[16];
