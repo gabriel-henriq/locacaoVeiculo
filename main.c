@@ -13,15 +13,17 @@
 #include "globais.c"
 #include "utilitarias.c"
 #include "estruturarCarro.c"
+#include "carregarDados.c"
 #include "adicionar.c"
 #include "imprimirLista.c"
 #include "menu.c"
-#include "carregarDados.c"
+
 
 
 int main(void) {
 	
-		
+	carregarDados();
+	
 	sistemaPrincipal();
     
 
