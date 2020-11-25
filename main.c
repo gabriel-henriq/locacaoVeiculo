@@ -18,8 +18,8 @@
 #include "imprimirListaDeCarros.c"
 #include "menu.c"
 #include "menuPesquisar.c"
+#include "menuRelatorioFiltro.c"
 #include "pesquisaID.c"
-
 
 int main(void) {
 	
