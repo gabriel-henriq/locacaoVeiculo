@@ -2,7 +2,7 @@ void imprimirListaDeCarros(void) {
 	int i = 0;
 	gotoxy(18,22);
 	printf("Total de items cadastrados: %d", NUM_ID);
-	imprimeNomeDados();
+	imprimeNomeDados("ID","MARCA","MODELO","COR","ANO");
     for(i = 0; i < NUM_ID; i++) {
     	gotoxy(20,i+6);
     	printf("%d", nCarro[i].carroID);

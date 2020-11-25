@@ -48,15 +48,15 @@ void estruturaBasica(void) {
 	imprimeCreditos();
 	bordasMenu();
 }
-void imprimeNomeDados(void) {
+void imprimeNomeDados(char *s1, char *s2, char *s3, char *s4, char *s5) {
 	gotoxy(20,4);
-	printf("ID");
+	printf("%s", s1);
 	gotoxy(25,4);
-	printf("MARCA");
+	printf("%s", s2);
 	gotoxy(40,4);
-	printf("MODELO");
+	printf("%s", s3);
 	gotoxy(53,4);
-	printf("COR");
+	printf("%s", s4);
 	gotoxy(65,4);
-	printf("ANO");
+	printf("%s", s5);
 }

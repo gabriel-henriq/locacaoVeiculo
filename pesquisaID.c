@@ -7,7 +7,7 @@ void pesquisaID(void) {
 	for(i=0;i<NUM_ID;i++){
 		if(nCarro[i].carroID == id){
 			estruturaBasica();
-	    	imprimeNomeDados();
+	    	imprimeNomeDados("ID","MARCA","MODELO","COR","ANO");
 	    	gotoxy(20,6);
 			printf("%d", nCarro[i].carroID);
 			gotoxy(25,6);
