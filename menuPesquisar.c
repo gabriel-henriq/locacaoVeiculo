@@ -1,4 +1,5 @@
 void pesquisaID(void);
+void menuRelatorioFiltro(void);
 void menuPesquisar(void) {
 	int opcao = 0;
 	do {
@@ -86,7 +87,7 @@ void menuPesquisar(void) {
 				estruturaBasica();
 				gotoxy(35,2);
 				printf("Relatorio com filtro");
-				
+				menuRelatorioFiltro();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
