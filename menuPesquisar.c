@@ -19,12 +19,12 @@ void menuPesquisar(void) {
 		printf("Imprimir todos os items");
 		gotoxy(32,16);
 		printf("Relatorio com filtro");
-		gotoxy(30,19);
+		gotoxy(32,19);
 		printf("Voltar");
 		imprimeCreditos();
 		gotoxy(15, 27);
 		do {
-			gotoxy(25,posicaoDaLinha);
+			gotoxy(27,posicaoDaLinha);
 			printf("  -%c",16); // Desenha uma seta para selecionar as opções do menu.
 			gotoxy(1,22);
 			teclaPressionada = getch();
@@ -47,7 +47,7 @@ void menuPesquisar(void) {
 				}
 			}
 			if(posicaoDaLinha != posicaoDaColuna) { // Limpa as setas (quando movimentadas).
-				gotoxy(25,posicaoDaColuna);
+				gotoxy(26,posicaoDaColuna);
 				printf("     ");
 				posicaoDaColuna = posicaoDaLinha;
 			}

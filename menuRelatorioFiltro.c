@@ -1,6 +1,6 @@
-void menuPesquisar(void);
 void imprimirLista(void);
-void sistemaPrincipal(void) {
+void menuPesquisar(void);
+void menuRelatorioFiltro(void) {
 	int opcao = 0;
 	do {
 		int teclaPressionada;
@@ -10,15 +10,15 @@ void sistemaPrincipal(void) {
 		limpaTela();
 		bordasMenu();
 		gotoxy(28,3);
-		printf("P a i n e l  D e  C o n t r o l e ");
+		printf("M e n u   R e l a t o r i o");
 		gotoxy(40,7);
-		printf("Adicionar");
+		printf("Marca");
 		gotoxy(40,10);
-		printf("Excluir");
+		printf("Modelo");
 		gotoxy(40,13);
-		printf("Alterar");
+		printf("Cor");
 		gotoxy(40,16);
-		printf("Pesquisar");
+		printf("Ano");
 		gotoxy(40,19);
 		printf("Sair");
 		imprimeCreditos();
@@ -57,14 +57,23 @@ void sistemaPrincipal(void) {
 		} while(opcao == 0);
 		switch(opcao) {
 			case 7:
-				adicionarCarro();
+				limpaTela();
+				imprimeCreditos();
+				bordasMenu();
+				gotoxy(36,2);
+				printf("Relatorio por Marca");
+				relatorioMarca();
+				gotoxy(60,22);
+				printf("VOLTAR [ESC]");
+				apertarESC();
+				break;
 				break;
 			case 10:
 				limpaTela();
 				imprimeCreditos();
 				bordasMenu();
 				gotoxy(40,3);
-				printf("Excluir");
+				printf("Relatorio por Modelo");
 				
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
@@ -75,7 +84,7 @@ void sistemaPrincipal(void) {
 				imprimeCreditos();
 				bordasMenu();
 				gotoxy(40,3);
-				printf("Alterar");
+				printf("Relatorio por Cor");
 				
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
@@ -86,27 +95,14 @@ void sistemaPrincipal(void) {
 				imprimeCreditos();
 				bordasMenu();
 				gotoxy(40,2);
-				printf("Pesquisar");
+				printf("Relatorio por Ano");
 				menuPesquisar();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
 				break;
 			case 19:
-				limpaTela();
-				imprimeCreditos();
-				bordasMenu();
-				gotoxy(39,12);
-				printf("Saindo");
-				int i;
-				for(i = 0; i < 3; i++) {
-					printf(".");
-					Sleep(300);
-				}
-				gotoxy(36,12);
-				printf("Ate a proxima!");
-				gotoxy(0,24);
-				exit(0);				
+				menuPesquisar();
 				break;
 			default:
 				printf("Você deve escolher uma opção válida\n");
