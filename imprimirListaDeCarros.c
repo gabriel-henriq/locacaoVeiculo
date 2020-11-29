@@ -13,6 +13,6 @@ void imprimirListaDeCarros(void) {
     	gotoxy(53,i+6);
     	printf("%s", nCarro[i].cor);
     	gotoxy(65,i+6);
-    	printf("%d", nCarro[i].ano);
+    	printf("%s", nCarro[i].ano);
 	}
 }
