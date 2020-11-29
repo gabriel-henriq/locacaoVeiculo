@@ -51,7 +51,7 @@ void estruturaBasica(void) {
 void imprimeNomeDados(char *s1, char *s2, char *s3, char *s4, char *s5) {
 	gotoxy(20,4);
 	printf("%s", s1);
-	gotoxy(25,4);
+	gotoxy(26,4);
 	printf("%s", s2);
 	gotoxy(40,4);
 	printf("%s", s3);

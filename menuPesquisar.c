@@ -11,6 +11,8 @@ void menuPesquisar(void) {
 		bordasMenu();
 		gotoxy(28,3);
 		printf("M e n u     P e s q u i s a r");
+		gotoxy(18,5);
+		printf("Painel de Controle > Menu Pesquisar");
 		gotoxy(32,7);
 		printf("Gerar Relatorio");
 		gotoxy(32,10);

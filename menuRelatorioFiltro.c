@@ -11,6 +11,8 @@ void menuRelatorioFiltro(void) {
 		bordasMenu();
 		gotoxy(28,3);
 		printf("M e n u   R e l a t o r i o");
+		gotoxy(18,5);
+		printf("Painel de Controle > Menu Pesquisar > Relatorio");
 		gotoxy(40,7);
 		printf("Marca");
 		gotoxy(40,10);
@@ -72,9 +74,9 @@ void menuRelatorioFiltro(void) {
 				limpaTela();
 				imprimeCreditos();
 				bordasMenu();
-				gotoxy(40,3);
+				gotoxy(36,2);
 				printf("Relatorio por Modelo");
-				
+				relatorioModelo();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
