@@ -5,7 +5,7 @@ void menuPesquisar(void) {
 	do {
 		int teclaPressionada;
 		opcao = 0;
-		int posicaoDaLinha = 7, posicaoDaColuna = 7, posicaoDaSeta = 7; // Manipula a localização do ponteiro na tela.
+		int posicaoDaLinha = 10, posicaoDaColuna = 10, posicaoDaSeta = 10; // Manipula a localização do ponteiro na tela.
 		inicio: // Saída do comando 'goto', para voltar ao início do menu.
 		limpaTela();
 		bordasMenu();
@@ -13,8 +13,6 @@ void menuPesquisar(void) {
 		printf("M e n u     P e s q u i s a r");
 		gotoxy(18,5);
 		printf("Painel de Controle > Menu Pesquisar");
-		gotoxy(32,7);
-		printf("Gerar Relatorio");
 		gotoxy(32,10);
 		printf("Pesquisar por ID");
 		gotoxy(32,13);
@@ -24,7 +22,7 @@ void menuPesquisar(void) {
 		gotoxy(32,19);
 		printf("Voltar");
 		imprimeCreditos();
-		gotoxy(15, 27);
+		gotoxy(10, 27);
 		do {
 			gotoxy(27,posicaoDaLinha);
 			printf("  -%c",16); // Desenha uma seta para selecionar as opções do menu.
@@ -34,16 +32,16 @@ void menuPesquisar(void) {
 				posicaoDaColuna = posicaoDaLinha;
 				posicaoDaLinha += 3 ;
 				posicaoDaSeta += 3;
-				if(posicaoDaSeta > 19) {// Se posição da seta para baixo ultrapassar "Sair" (posição 16), retorna para a posição 7 (Jogar).
-					posicaoDaSeta = 7;
-					posicaoDaLinha = 7;
+				if(posicaoDaSeta > 19) {// Se posição da seta para baixo ultrapassar "Voltar" (posição 19), retorna para a posição 10 (Pesquisar por ID).
+					posicaoDaSeta = 10;
+					posicaoDaLinha = 10;
 				}
 			}
 			if(teclaPressionada == TECLA_SETA_CIMA) {
 				posicaoDaColuna = posicaoDaLinha;
 				posicaoDaLinha -= 3;
 				posicaoDaSeta -= 3;
-				if(posicaoDaSeta < 7) {	// Se a posição da seta para cima ultrapassar "Jogar" (posição 7), retorna para a posição 16 (Sair).
+				if(posicaoDaSeta < 10) {	// Se a posição da seta para cima ultrapassar "Pesquisar por ID" (posição 10), retorna para a posição 19 (Voltar).
 					posicaoDaSeta = 19;
 					posicaoDaLinha = 19;
 				}
