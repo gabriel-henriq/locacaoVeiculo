@@ -64,11 +64,11 @@ void coletarPalavra(char* palavra, int qtdLetras, char *string) {
 				palavraSecretaValida = 0;
 			}
 			else
-				if(contarLetras(palavra) < 1) { // Limita a quantidade mínima de letras que a palavra pode ter.
-					limpaEspacos(1,1);
-					gotoxy(30,12);
-					printf("No m%cnimo duas letras!", 161);
-					palavraSecretaValida = 0;
+				if(contarLetras(palavra) < 2 && string != "Nome do modelo: ") { // Limita a quantidade mínima de letras que a palavra pode ter.
+						limpaEspacos(1,1);
+						gotoxy(30,12);
+						printf("No m%cnimo duas letras!", 161);
+						palavraSecretaValida = 0;
 				}
 				else { // Informa que a palavra foi salva com sucesso.
 					limpaEspacos(1,1);
