@@ -98,7 +98,7 @@ void menuRelatorioFiltro(void) {
 				bordasMenu();
 				gotoxy(36,2);
 				printf("Relatorio por Ano");
-				
+				relatorioAno();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();

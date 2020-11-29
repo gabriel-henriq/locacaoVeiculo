@@ -21,6 +21,7 @@
 #include "relatorioMarca.c"
 #include "relatorioModelo.c"
 #include "relatorioCor.c"
+#include "relatorioAno.c"
 #include "menuRelatorioFiltro.c"
 #include "pesquisaID.c"
 
