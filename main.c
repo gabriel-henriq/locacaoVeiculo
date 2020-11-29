@@ -20,6 +20,7 @@
 #include "menuPesquisar.c"
 #include "relatorioMarca.c"
 #include "relatorioModelo.c"
+#include "relatorioCor.c"
 #include "menuRelatorioFiltro.c"
 #include "pesquisaID.c"
 

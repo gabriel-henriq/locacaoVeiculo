@@ -85,9 +85,9 @@ void menuRelatorioFiltro(void) {
 				limpaTela();
 				imprimeCreditos();
 				bordasMenu();
-				gotoxy(40,3);
+				gotoxy(36,2);
 				printf("Relatorio por Cor");
-				
+				relatorioCor();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
@@ -96,9 +96,9 @@ void menuRelatorioFiltro(void) {
 				limpaTela();
 				imprimeCreditos();
 				bordasMenu();
-				gotoxy(40,2);
+				gotoxy(36,2);
 				printf("Relatorio por Ano");
-				menuPesquisar();
+				
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
