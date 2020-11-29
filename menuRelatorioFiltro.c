@@ -22,7 +22,7 @@ void menuRelatorioFiltro(void) {
 		gotoxy(40,16);
 		printf("Ano");
 		gotoxy(40,19);
-		printf("Sair");
+		printf("Voltar");
 		imprimeCreditos();
 		gotoxy(15, 27);
 		do {
