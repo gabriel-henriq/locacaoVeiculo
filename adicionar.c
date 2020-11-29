@@ -1,4 +1,117 @@
 void sistemaPrincipal(void);
+void limpaEspacos(int aviso, int continuar) {
+	int i;
+	for(i=18;i<70;i++) {
+		gotoxy(i,10);
+		printf(" ");			
+		if(aviso == 1) {
+			gotoxy(i,12);
+			printf(" ");			
+		}
+		if(continuar == 1) {
+			gotoxy(i,14);
+			printf(" ");			
+		}	
+	}	
+}
+int ehLetraOuEspaco(char* palavra) { // Verifica se a palavra possui espaço ou letras (isalpha) e retorna 0 caso tenha outro tipo de caractere.
+	int i;
+	for(i=0; i<strlen(palavra); i++) {
+		if(palavra[i] != ' ' && !isalpha(palavra[i])) {
+			return 0;
+		}
+	}
+	return 1;
+}
+void lerStringSeguramente(char* palavra, int tamanho) { // Remove o \n da palavra.
+	fflush(stdin);
+	if(fgets(palavra, tamanho, stdin) != NULL) {
+		/* Remove a nova linha (\n), caso ela tenha sido lida pelo scanf */
+		int indiceUltimoCaractere = strlen(palavra) - 1;
+		if(palavra[indiceUltimoCaractere] == '\n') {
+			palavra[indiceUltimoCaractere] = '\0';
+		}
+		fflush(stdin);
+	}
+}
+int contarLetras(char* palavra) { //Conta quantas letras com a função isalpha existem na palavra e retorna a quantidade de letras.
+	int i, quantidadeLetras=0;
+	for(i=0; i<strlen(palavra); i++) {
+		if(isalpha(palavra[i])) {
+			quantidadeLetras++;
+		}
+	}
+	return quantidadeLetras;
+}
+void paraMaiusculo(char* palavraParaMudar) { // Passa a palavra para maiúsculo.
+	int i;
+	for(i = 0; i < strlen(palavraParaMudar); i++) {
+		palavraParaMudar[i] = toupper(palavraParaMudar[i]);
+	}
+}
+void coletarPalavra(char* palavra, int qtdLetras, char *string) {
+	int palavraSecretaValida;
+	do {
+		gotoxy(30,10);
+		printf("%s", string);
+		gotoxy(30+strlen(string),10);
+		lerStringSeguramente(palavra, 17);
+		if(string == "Nome do modelo: " || ehLetraOuEspaco(palavra)) { //Verifica se a palavra tem espaço e letra, senão informa o erro.
+			if (contarLetras(palavra) > qtdLetras) { // Limita a quantidade máxima de letras que a palavra pode ter.
+				limpaEspacos(1,1);
+				gotoxy(30,12);
+				printf("Nao ultrapasse %d letras!", qtdLetras);
+				palavraSecretaValida = 0;
+			}
+			else
+				if(contarLetras(palavra) < 1) { // Limita a quantidade mínima de letras que a palavra pode ter.
+					limpaEspacos(1,1);
+					gotoxy(30,12);
+					printf("No m%cnimo duas letras!", 161);
+					palavraSecretaValida = 0;
+				}
+				else { // Informa que a palavra foi salva com sucesso.
+					limpaEspacos(1,1);
+					gotoxy(30,12);
+					printf("Salvo com sucesso!");
+					palavraSecretaValida = 1;
+				}
+		}
+		else { // Informa que a palavra não pode ter caracteres especiais.
+			limpaEspacos(1,1);
+			gotoxy(30,12);
+			printf("Digite somente letras sem acentos!");
+			palavraSecretaValida = 0;
+		}
+	} while(!palavraSecretaValida);
+	paraMaiusculo(palavra);
+}
+int contaDigitos(char* digitos){
+	int i, quantidadeDigitos=0;
+	for(i=0; i<strlen(digitos); i++) {
+		if(isdigit(digitos[i])) {
+			quantidadeDigitos++;
+		}
+	}
+	return quantidadeDigitos;
+}
+void leAno(char* ano) {
+	int repeat;
+	do {
+		repeat = 0;
+		gotoxy(30,10);
+		printf("Digite o ano: ");
+		fgets(ano,5,stdin);
+		
+		if(contaDigitos(ano) != 4) {
+				limpaEspacos(1,0);
+				gotoxy(30,12);
+				printf("Formato invalido.");
+				repeat = 1;
+			}
+		fflush(stdin);
+	} while(repeat == 1);	
+}
 void adicionarCarro(void) {
 	
 	estruturaBasica();
@@ -38,37 +151,13 @@ void adicionarCarro(void) {
 		}
 		
 		nCarro[NUM_ID].carroID = NUM_ID+1;
-		
-		gotoxy(30,10);
-		printf("Digite o nome da marca: ");
-		fgets(nCarro[NUM_ID].marca, 14, stdin);
-		fflush(stdin);
-		
-		
-		gotoxy(30,10);
-		printf("                                         ");
-		gotoxy(30,10);
-		printf("Digite o nome do modelo: ");
-		fgets(nCarro[NUM_ID].modelo, 12,stdin);
-		fflush(stdin);	
-	
-	
-		gotoxy(30,10);
-		printf("                                          ");
-		gotoxy(30,10);
-		printf("Digite o nome da cor: ");
-		fgets(nCarro[NUM_ID].cor, 11,stdin);
-		fflush(stdin);
-		
-		gotoxy(30,10);
-		printf("                                          ");
-		gotoxy(30,10);
-		printf("Digite o ano: ");
-		scanf("%d", &nCarro[NUM_ID].ano);	
-		fflush(stdin);	
+		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
+		coletarPalavra(nCarro[NUM_ID].modelo, 12,"Nome do modelo: ");
+		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
+		leAno(nCarro[NUM_ID].ano);
 		
 		NUM_ID++;
-		
+		limpaEspacos(1,1);
 		gotoxy(30,10);
 		printf("                                       ");
 		gotoxy(40,10);
@@ -76,7 +165,7 @@ void adicionarCarro(void) {
 		gotoxy(36,12);
 		printf("Salvar e Sair [S]");
 		gotoxy(33,14);
-		printf("Continuar [Qualquer tecla]");
+		printf("Continuar [Enter]");
 		tmpNum = getch();
 		if(tmpNum == 83 || tmpNum == 115) {
 			FILE *database;
@@ -88,10 +177,7 @@ void adicionarCarro(void) {
 			fclose(database);
 			break;		
 		}
-		gotoxy(36,12);
-		printf("                               ");
-		gotoxy(33,14);
-		printf("                               ");
 		
+	limpaEspacos(1,1);
 	}
 }
