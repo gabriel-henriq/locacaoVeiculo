@@ -19,10 +19,12 @@
 #include "menu.c"
 #include "menuPesquisar.c"
 #include "relatorioMarca.c"
+#include "relatorioModelo.c"
 #include "menuRelatorioFiltro.c"
 #include "pesquisaID.c"
+
 int main(void) {
-	
+
 	carregarDados();
 	
 	sistemaPrincipal();
