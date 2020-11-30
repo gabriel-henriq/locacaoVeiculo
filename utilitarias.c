@@ -1,11 +1,26 @@
-void limpaTela(void) {
-	system("cls");
-}
 void gotoxy(int X,int Y) { // Declaração do comando gotoxy.
 	COORD c;
 	c.X = X;
 	c.Y = Y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
+}
+void limpaEspacos(int aviso, int continuar) {
+	int i;
+	for(i=18;i<70;i++) {
+		gotoxy(i,10);
+		printf(" ");			
+		if(aviso == 1) {
+			gotoxy(i,12);
+			printf(" ");			
+		}
+		if(continuar == 1) {
+			gotoxy(i,14);
+			printf(" ");			
+		}	
+	}	
+}
+void limpaTela(void) {
+	system("cls");
 }
 void bordasMenu(void) {
 	int i;

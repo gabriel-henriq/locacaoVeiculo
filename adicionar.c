@@ -1,19 +1,4 @@
 void sistemaPrincipal(void);
-void limpaEspacos(int aviso, int continuar) {
-	int i;
-	for(i=18;i<70;i++) {
-		gotoxy(i,10);
-		printf(" ");			
-		if(aviso == 1) {
-			gotoxy(i,12);
-			printf(" ");			
-		}
-		if(continuar == 1) {
-			gotoxy(i,14);
-			printf(" ");			
-		}	
-	}	
-}
 int ehLetraOuEspaco(char* palavra) { // Verifica se a palavra possui espaço ou letras (isalpha) e retorna 0 caso tenha outro tipo de caractere.
 	int i;
 	for(i=0; i<strlen(palavra); i++) {
