@@ -40,7 +40,7 @@ void coletarPalavra(char* palavra, int qtdLetras, char *string) {
 		gotoxy(30,10);
 		printf("%s", string);
 		gotoxy(30+strlen(string),10);
-		lerStringSeguramente(palavra, 17);
+		lerStringSeguramente(palavra, qtdLetras);
 		if(string == "Nome do modelo: " || ehLetraOuEspaco(palavra)) { //Verifica se a palavra tem espaço e letra, senão informa o erro.
 			if (contarLetras(palavra) > qtdLetras) { // Limita a quantidade máxima de letras que a palavra pode ter.
 				limpaEspacos(1,1);
@@ -137,7 +137,7 @@ void adicionarCarro(void) {
 		
 		nCarro[NUM_ID].carroID = NUM_ID+1;
 		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
-		coletarPalavra(nCarro[NUM_ID].modelo, 12,"Nome do modelo: ");
+		coletarPalavra(nCarro[NUM_ID].modelo, 11,"Nome do modelo: ");
 		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
 		leAno(nCarro[NUM_ID].ano);
 		
