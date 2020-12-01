@@ -1,7 +1,7 @@
 void relatorioMarca(void) {	
 	int i = 1, j = 0, k = 0;
 	gotoxy(18,22);
-	printf("Total de items cadastrados: %d", NUM_ID);
+	printf("Total de items cadastrados: %d", NUM_ID - DEL_ID);
 	imprimeNomeDados("MARCA"," ","ID"," "," ");
 	
 	struct tipoCarro tempCarro[16];
@@ -18,11 +18,16 @@ void relatorioMarca(void) {
 		}
 		i++;
 	}
-	
+	j = 0;
     for(i = 0; i < NUM_ID; i++) {
-    	gotoxy(20,i+6);
-    	printf("%s", tempCarro[i].marca);
-    	gotoxy(40,i+6);
-    	printf("%d", tempCarro[i].carroID);	
+    	if(tempCarro[i].deletado == 1) {
+    		j++;
+		}
+    	if(tempCarro[i].deletado != 1 && tempCarro[i].carroID != 0) {	
+	    	gotoxy(20,i+6-j);
+	    	printf("%s", tempCarro[i].marca);
+	    	gotoxy(40,i+6-j);
+	    	printf("%d", tempCarro[i].carroID);
+	    }
 	}
 }

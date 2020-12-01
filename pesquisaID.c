@@ -5,7 +5,7 @@ void pesquisaID(void) {
 	scanf("%d", &id);
 	estruturaBasica();
 	for(i=0;i<NUM_ID;i++){
-		if(nCarro[i].carroID == id){
+		if(nCarro[i].carroID == id && nCarro[i].deletado != 1){
 			estruturaBasica();
 	    	imprimeNomeDados("ID","MARCA","MODELO","COR","ANO");
 	    	gotoxy(20,6);
