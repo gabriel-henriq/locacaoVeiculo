@@ -24,15 +24,9 @@
 #include "relatorioAno.c"
 #include "menuRelatorioFiltro.c"
 #include "pesquisaID.c"
-
+#include "excluirVeiculo.c"
 int main(void) {
-
 	carregarDados();
-	
 	sistemaPrincipal();
-    
-
-    return EXIT_SUCCESS; 
-} 
-
-
+    return EXIT_SUCCESS;
+}

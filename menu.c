@@ -1,5 +1,6 @@
 void menuPesquisar(void);
 void imprimirLista(void);
+void excluirVeiculo(void);
 void sistemaPrincipal(void) {
 	int opcao = 0;
 	do {
@@ -65,7 +66,7 @@ void sistemaPrincipal(void) {
 				bordasMenu();
 				gotoxy(40,3);
 				printf("Excluir");
-				
+				excluirVeiculo();
 				gotoxy(60,22);
 				printf("VOLTAR [ESC]");
 				apertarESC();
