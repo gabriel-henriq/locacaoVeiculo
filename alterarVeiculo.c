@@ -1,6 +1,7 @@
 void alterarVeiculo() {
 	int numValido, id, opcao, i, naoExiste = 0;
 	do{
+		// Valida se o ID digitado é um número e oferece a opção de voltar ao menu ou tentar outro ID
 		numValido = 1;
 		fflush(stdin);
 		gotoxy(26,10);
@@ -40,7 +41,7 @@ void alterarVeiculo() {
 			}
 		}
 	}while(numValido == 0);
-	
+	// Caso o usuário digite o valor 99, a função imprime todos os veículos cadastrados no sistema.
 	for (i = 0; i < NUM_ID; i++) {
 		if(nCarro[i].deletado == 1 && nCarro[i].carroID == id) {
 			gotoxy(30,12);
@@ -71,6 +72,7 @@ void alterarVeiculo() {
 			}
 		}
 		else 
+		// Caso nenhuma das condições anteriores, o usuário atualiza o id digitado. 
 			if(id == nCarro[i].carroID && nCarro[i].deletado != 1) {
 				limpaTela();
 				estruturaBasica();

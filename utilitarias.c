@@ -1,10 +1,10 @@
-void gotoxy(int X,int Y) { // Declaração do comando gotoxy.
+void gotoxy(int X,int Y) { // Declaração do comando gotoxy para pode manipular a localização das letras e desenhos na tela.
 	COORD c;
 	c.X = X;
 	c.Y = Y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),c);
 }
-void limpaEspacos(int aviso, int continuar) {
+void limpaEspacos(int aviso, int continuar) { // Faz a limpeza em determinados espaços na tela, utilizando dois parametros.
 	int i;
 	for(i=18;i<70;i++) {
 		gotoxy(i,10);
@@ -45,7 +45,7 @@ void bordasMenu(void) {
 		printf("%c",200);
 	}
 }
-void imprimeCreditos(void) {
+void imprimeCreditos(void) { // Imprime creditos.
 	gotoxy(75,3);
 	printf("Faculdades Integradas Camoes.");
 	gotoxy(75,5);
@@ -63,7 +63,8 @@ void estruturaBasica(void) {
 	imprimeCreditos();
 	bordasMenu();
 }
-void imprimeNomeDados(char *s1, char *s2, char *s3, char *s4, char *s5) {
+// Permite o usuário digitar 5 palavras para serem desenhadas em determinadas posições na tela.
+void imprimeNomeDados(char *s1, char *s2, char *s3, char *s4, char *s5) { 
 	gotoxy(20,4);
 	printf("%s", s1);
 	gotoxy(26,4);

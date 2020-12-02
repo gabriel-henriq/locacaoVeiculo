@@ -6,8 +6,10 @@ void relatorioCor(void) {
 	
 	struct tipoCarro tempCarro[16];
 	struct tipoCarro tempCarro1;
-	memcpy(tempCarro,nCarro, sizeof(struct tipoCarro) * NUM_ID);
+	memcpy(tempCarro,nCarro, sizeof(struct tipoCarro) * NUM_ID); // Copia a estrutura de nCarro para a estrutura temporária tempCarro.
 	
+	/* Função de ordenação Insertion Sort (Utilizado pelo fato de existir
+	um número finito e pequeno no sistema para armazenamento de dados 16 posições).*/
 	while(i < NUM_ID) {
 		j = i;
 		while (j>0 && tempCarro[j-1].cor[0] > tempCarro[j].cor[0]) {
@@ -18,6 +20,7 @@ void relatorioCor(void) {
 		}
 		i++;
 	}
+	// Imprime os dados do relatório com duas condiçõe (ID não inativado e ID diferente de 0).
 	j=0;
     for(i = 0; i < NUM_ID; i++) {
     	if(tempCarro[i].deletado == 1) {

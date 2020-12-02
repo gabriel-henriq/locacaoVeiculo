@@ -10,6 +10,7 @@ void excluirVeiculo(void){
 	printf("E x c l u i r  V e i c u l o");
 	gotoxy(26,8);
 	printf("Digite 99 para imprimir todos os items.");
+	// Valida se o ID digitado é um número e oferece a opção de voltar ao menu ou tentar outro ID
 	do{
 		numValido = 1;
 		fflush(stdin);
@@ -50,7 +51,7 @@ void excluirVeiculo(void){
 			}
 		}
 	}while(numValido == 0);
-	
+	// Caso o usuário digite o valor 99, a função imprime todos os veículos cadastrados no sistema.
 	if(id == 99) {
 		limpaTela();
 		estruturaBasica();
@@ -63,8 +64,11 @@ void excluirVeiculo(void){
 			excluirVeiculo();
 		}
 	}
+	// Inativa o veículo do sistema alterando o valor da variável deletado para 1.
 	for(i=0;i<NUM_ID;i++){
-		if(nCarro[i].carroID == id && nCarro[i].deletado != 1){
+		// Verifica se o id digitado é igual ao valor do id da estrutura índice i e se o valor deletado é diferente de 1.
+		if(nCarro[i].carroID == id && nCarro[i].deletado != 1){ 
+		// Salva o ID no array de veículos deletados.
 			ARRAY_DEL[DEL_ID] = id;
 			nCarro[i].deletado = 1;
 			DEL_ID++;

@@ -7,6 +7,8 @@ void imprimirListaDeCarros(void) {
     	if(nCarro[i].deletado == 1) {
     		j++;
 		}
+		/* Para cada iteração do for declarado, abre-se uma condição
+		 para verificar se o carro foi inativado ou se o id é diferente 0 para imprimir*/
     	if(nCarro[i].deletado != 1 && nCarro[i].carroID != 0) {
 	    	gotoxy(20,i+6-j);
 	    	printf("%d", nCarro[i].carroID);

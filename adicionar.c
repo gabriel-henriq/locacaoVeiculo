@@ -71,7 +71,7 @@ void coletarPalavra(char* palavra, int qtdLetras, char *string) {
 	} while(!palavraSecretaValida);
 	paraMaiusculo(palavra);
 }
-int contaDigitos(char* digitos){
+int contaDigitos(char* digitos){ // Conta quantidade de números no array e verifica se são números.
 	int i, quantidadeDigitos=0;
 	for(i=0; i<strlen(digitos); i++) {
 		if(isdigit(digitos[i])) {
@@ -98,7 +98,6 @@ void leAno(char* ano, char *string) {
 	} while(repeat == 1);	
 }
 void adicionarCarro(void) {
-	
 	estruturaBasica();
 	
 	gotoxy(40,3);
@@ -109,7 +108,7 @@ void adicionarCarro(void) {
 	while(tmpNum != 27) {
 		
 		if(NUM_ID > 15) {
-			do{
+			do{ // Caso o número de ID seja excedido, o sistema fornece opções para salvar ou simplesmente sair com dados em memória.
 				gotoxy(18,7);
 				printf("Voce atingiu o nivel maximo de armazenamento de dados.");
 				gotoxy(21,9);
@@ -134,14 +133,14 @@ void adicionarCarro(void) {
 				}				
 			} while(1);
 		}
-		
+		// Declaração para adicionar veículos na estrutura do sistema.
 		nCarro[NUM_ID].carroID = NUM_ID+1;
 		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
 		coletarPalavra(nCarro[NUM_ID].modelo, 11,"Nome do modelo: ");
 		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
 		leAno(nCarro[NUM_ID].ano,"Nome do ano: ");
-		
 		NUM_ID++;
+		// Fornece opções para o usuário sair com dados em memória ou salvar os dados em um arquivo.txt.
 		limpaEspacos(1,1);
 		gotoxy(30,10);
 		printf("                                       ");
@@ -162,7 +161,6 @@ void adicionarCarro(void) {
 			fclose(database);
 			break;		
 		}
-		
 	limpaEspacos(1,1);
 	}
 }

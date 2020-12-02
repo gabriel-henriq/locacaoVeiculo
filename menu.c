@@ -34,7 +34,7 @@ void sistemaPrincipal(void) {
 				posicaoDaColuna = posicaoDaLinha;
 				posicaoDaLinha += 3 ;
 				posicaoDaSeta += 3;
-				if(posicaoDaSeta > 19) {// Se posição da seta para baixo ultrapassar "Sair" (posição 16), retorna para a posição 7 (Jogar).
+				if(posicaoDaSeta > 19) {// Se posição da seta para baixo ultrapassar "Sair" (posição 19), retorna para a posição 7 (Adicionar).
 					posicaoDaSeta = 7;
 					posicaoDaLinha = 7;
 				}
@@ -43,7 +43,7 @@ void sistemaPrincipal(void) {
 				posicaoDaColuna = posicaoDaLinha;
 				posicaoDaLinha -= 3;
 				posicaoDaSeta -= 3;
-				if(posicaoDaSeta < 7) {	// Se a posição da seta para cima ultrapassar "Jogar" (posição 7), retorna para a posição 16 (Sair).
+				if(posicaoDaSeta < 7) {	// Se a posição da seta para cima ultrapassar "Adicionar" (posição 7), retorna para a posição 19 (Sair).
 					posicaoDaSeta = 19;
 					posicaoDaLinha = 19;
 				}
