@@ -25,6 +25,7 @@
 #include "menuRelatorioFiltro.c"
 #include "pesquisaID.c"
 #include "excluirVeiculo.c"
+#include "alterarVeiculo.c"
 int main(void) {
 	carregarDados();
 	sistemaPrincipal();
