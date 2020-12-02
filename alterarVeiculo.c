@@ -1,5 +1,6 @@
 void alterarVeiculo() {
 	int numValido, id, opcao, i, naoExiste = 0;
+	char ano[5];
 	do{
 		// Valida se o ID digitado é um número e oferece a opção de voltar ao menu ou tentar outro ID
 		numValido = 1;
@@ -81,8 +82,8 @@ void alterarVeiculo() {
 				coletarPalavra(nCarro[i].marca, 15,"Novo nome para marca: ");
 				coletarPalavra(nCarro[i].modelo, 11,"Novo nome para modelo: ");
 				coletarPalavra(nCarro[i].cor, 11,"Novo nome para cor: ");      
-				leAno(nCarro[i].ano,"Novo ano: ");
-				
+				leAno(ano,"Novo ano: ");
+				nCarro[i].ano = atoi(ano);
 				FILE *database;
 				database = fopen("database.txt", "w");
 				int j;

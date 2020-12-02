@@ -20,7 +20,7 @@ void pesquisaID(void) {
 			gotoxy(53,6);
 			printf("%s", nCarro[i].cor);
 			gotoxy(65,6);
-			printf("%s", nCarro[i].ano);
+			printf("%d", nCarro[i].ano);
 		}
 		else {
 			naoExiste++;

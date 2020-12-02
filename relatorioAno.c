@@ -12,7 +12,7 @@ void relatorioAno(void) {
 	um número finito e pequeno no sistema para armazenamento de dados 16 posições).*/
 	while(i < NUM_ID) {
 		j = i;
-		while (j>0 && tempCarro[j-1].ano[0] > tempCarro[j].ano[0]) {
+		while (j>0 && tempCarro[j-1].ano > tempCarro[j].ano) {
 			tempCarro1 = tempCarro[j-1];
 			tempCarro[j-1] = tempCarro[j];
 			tempCarro[j] = tempCarro1;
@@ -28,7 +28,7 @@ void relatorioAno(void) {
 		}
     	if(tempCarro[i].deletado != 1  && tempCarro[i].carroID != 0) {	
 	    	gotoxy(20,i+6-j);
-	    	printf("%s", tempCarro[i].ano);
+	    	printf("%d", tempCarro[i].ano);
 	    	gotoxy(40,i+6-j);
 	    	printf("%d", tempCarro[i].carroID);
 	    }

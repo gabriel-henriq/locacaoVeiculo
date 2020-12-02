@@ -99,7 +99,7 @@ void leAno(char* ano, char *string) {
 }
 void adicionarCarro(void) {
 	estruturaBasica();
-	
+	char ano[5];
 	gotoxy(40,3);
 	printf("Adicionar");
 	
@@ -108,6 +108,8 @@ void adicionarCarro(void) {
 	while(tmpNum != 27) {
 		
 		if(NUM_ID > 15) {
+						
+			
 			do{ // Caso o número de ID seja excedido, o sistema fornece opções para salvar ou simplesmente sair com dados em memória.
 				gotoxy(18,7);
 				printf("Voce atingiu o nivel maximo de armazenamento de dados.");
@@ -138,7 +140,8 @@ void adicionarCarro(void) {
 		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
 		coletarPalavra(nCarro[NUM_ID].modelo, 11,"Nome do modelo: ");
 		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
-		leAno(nCarro[NUM_ID].ano,"Nome do ano: ");
+		leAno(ano,"Nome do ano: ");
+		nCarro[NUM_ID].ano = atoi (ano);
 		NUM_ID++;
 		// Fornece opções para o usuário sair com dados em memória ou salvar os dados em um arquivo.txt.
 		limpaEspacos(1,1);
