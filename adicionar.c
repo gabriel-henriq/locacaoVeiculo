@@ -100,16 +100,63 @@ void leAno(char* ano, char *string) {
 void adicionarCarro(void) {
 	estruturaBasica();
 	char ano[5];
+	int i, lotado = 0, j = 0, opcao = 0, tmpNum = 0;
 	gotoxy(40,3);
 	printf("Adicionar");
-	
-	int tmpNum;
-	
-	while(tmpNum != 27) {
 		
-		if(NUM_ID > 15) {
-						
-			
+	while(NUM_ID < 16) {
+		// Declaração para adicionar veículos na estrutura do sistema.
+		nCarro[NUM_ID].carroID = NUM_ID+1;
+		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
+		coletarPalavra(nCarro[NUM_ID].modelo, 11,"Nome do modelo: ");
+		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
+		leAno(ano,"Nome do ano: ");
+		nCarro[NUM_ID].ano = atoi (ano);
+		NUM_ID++;
+		// Fornece opções para o usuário sair com dados em memória ou salvar os dados em um arquivo.txt.
+		limpaEspacos(1,1);
+		gotoxy(30,10);
+		printf("                                       ");
+		gotoxy(40,10);
+		printf("Sair [ESC]");
+		gotoxy(36,12);
+		printf("Salvar e Sair [S]");
+		gotoxy(33,14);
+		printf("Continuar [Enter]");
+		opcao = getch();
+		if(opcao == 83 || opcao == 115) {
+			FILE *database;
+			database = fopen("database.txt", "w");
+			int j;
+			for (j=0; j < NUM_ID; j++) {
+				fwrite(&nCarro[j], sizeof(struct tipoCarro), 1, database);
+			}
+			fclose(database);
+			break;		
+		}
+		else
+			if(opcao == 27){
+				break;
+			}
+		limpaEspacos(1,1);
+	}
+		
+	if(NUM_ID > 15) {
+		for(i = 0; i < NUM_ID; i++) {
+			if(ARRAY_DEL[j] == nCarro[i].carroID && nCarro[j].deletado == 1) {
+				coletarPalavra(nCarro[i].marca, 15,"Nome da marca: ");
+				coletarPalavra(nCarro[i].modelo, 11,"Nome do modelo: ");
+				coletarPalavra(nCarro[i].cor, 11,"Nome da cor: ");      
+				leAno(ano,"Nome do ano: ");
+				nCarro[i].ano = atoi (ano);
+				nCarro[i].deletado = 0;
+				j++;
+			}
+			else {
+				lotado++;
+			}
+		}
+		if(lotado == 16) {	
 			do{ // Caso o número de ID seja excedido, o sistema fornece opções para salvar ou simplesmente sair com dados em memória.
 				gotoxy(18,7);
 				printf("Voce atingiu o nivel maximo de armazenamento de dados.");
@@ -134,36 +181,6 @@ void adicionarCarro(void) {
 					sistemaPrincipal();		
 				}				
 			} while(1);
-		}
-		// Declaração para adicionar veículos na estrutura do sistema.
-		nCarro[NUM_ID].carroID = NUM_ID+1;
-		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
-		coletarPalavra(nCarro[NUM_ID].modelo, 11,"Nome do modelo: ");
-		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
-		leAno(ano,"Nome do ano: ");
-		nCarro[NUM_ID].ano = atoi (ano);
-		NUM_ID++;
-		// Fornece opções para o usuário sair com dados em memória ou salvar os dados em um arquivo.txt.
-		limpaEspacos(1,1);
-		gotoxy(30,10);
-		printf("                                       ");
-		gotoxy(40,10);
-		printf("Sair [ESC]");
-		gotoxy(36,12);
-		printf("Salvar e Sair [S]");
-		gotoxy(33,14);
-		printf("Continuar [Enter]");
-		tmpNum = getch();
-		if(tmpNum == 83 || tmpNum == 115) {
-			FILE *database;
-			database = fopen("database.txt", "w");
-			int j;
-			for (j=0; j < NUM_ID; j++) {
-				fwrite(&nCarro[j], sizeof(struct tipoCarro), 1, database);
-			}
-			fclose(database);
-			break;		
-		}
-	limpaEspacos(1,1);
+		}				
 	}
 }
