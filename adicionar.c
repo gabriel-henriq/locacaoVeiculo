@@ -41,7 +41,7 @@ void coletarPalavra(char* palavra, int qtdLetras, char *string) {
 		printf("%s", string);
 		gotoxy(30+strlen(string),10);
 		lerStringSeguramente(palavra, qtdLetras);
-		if(string == "Nome do modelo: " || ehLetraOuEspaco(palavra)) { //Verifica se a palavra tem espaço e letra, senão informa o erro.
+		if(string == "Nome do modelo: " || string == "Novo nome para modelo: "|| ehLetraOuEspaco(palavra)) { //Verifica se a palavra tem espaço e letra, senão informa o erro.
 			if (contarLetras(palavra) > qtdLetras) { // Limita a quantidade máxima de letras que a palavra pode ter.
 				limpaEspacos(1,1);
 				gotoxy(30,12);
@@ -49,7 +49,7 @@ void coletarPalavra(char* palavra, int qtdLetras, char *string) {
 				palavraSecretaValida = 0;
 			}
 			else
-				if(contarLetras(palavra) < 2 && string != "Nome do modelo: ") { // Limita a quantidade mínima de letras que a palavra pode ter.
+				if(contarLetras(palavra) < 2 && string != "Nome do modelo: " && string != "Novo nome para modelo: ") { // Limita a quantidade mínima de letras que a palavra pode ter.
 						limpaEspacos(1,1);
 						gotoxy(30,12);
 						printf("No m%cnimo duas letras!", 161);
@@ -80,12 +80,12 @@ int contaDigitos(char* digitos){
 	}
 	return quantidadeDigitos;
 }
-void leAno(char* ano) {
+void leAno(char* ano, char *string) {
 	int repeat;
 	do {
 		repeat = 0;
 		gotoxy(30,10);
-		printf("Digite o ano: ");
+		printf("%s", string);
 		fgets(ano,5,stdin);
 		
 		if(contaDigitos(ano) != 4) {
@@ -139,7 +139,7 @@ void adicionarCarro(void) {
 		coletarPalavra(nCarro[NUM_ID].marca, 15,"Nome da marca: ");
 		coletarPalavra(nCarro[NUM_ID].modelo, 11,"Nome do modelo: ");
 		coletarPalavra(nCarro[NUM_ID].cor, 11,"Nome da cor: ");      
-		leAno(nCarro[NUM_ID].ano);
+		leAno(nCarro[NUM_ID].ano,"Nome do ano: ");
 		
 		NUM_ID++;
 		limpaEspacos(1,1);
